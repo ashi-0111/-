@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: 'Noto Sans TC', 'PingFang TC', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Header 導覽列 */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  width: 160px;
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar a {
+  font-size: 15px;
+  color: #444;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #e3007f;
+  transform: scale(1.1);
+}
+
+.nav-button {
+  background-color: #e3007f;
+  color: #fff;
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 20px;
+  border: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #c2006f;
+}
+
+/* Timeline 主體區塊 */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 70px 90px;
+  background-color: #f0f0f0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.date-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #ff007a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.content-box {
+  background-color: #dcdcdc;
+  padding: 20px;
+  flex-grow: 1;
+  color: #fff;
+}
+
+.content-box p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+/* 頁尾區域 */
+/* 保證 Footer 在頁面底部 */
+body, html {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
