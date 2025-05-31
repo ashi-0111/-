@@ -114,24 +114,26 @@ button {
   line-height: 1.6;
 }
 
-/* 頁尾區域 */
-/* 保證 Footer 在頁面底部 */
-body, html {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+  /* === Footer 區塊 === */
+.site-footer {
+  background: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Arial', sans-serif;
+  border-top: 1px solid #eee;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 200px;
+  padding: 40px 20px;
 }
 
-main {
-    flex: 1;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #999;
-    font-size: 12px;
-    margin-top: 20px;
+.site-footer .company-info p {
+  margin: 0 0 10px;
+  line-height: 1.6;
 }
 

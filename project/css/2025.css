@@ -111,23 +111,29 @@ body {
   }
   
   /* === Footer 區塊 === */
-  .site-footer {
-    background: #ffffff;
-    padding: 50px 20px 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .company-info {
-    margin-bottom: 20px;
-    line-height: 1.8;
-  }
-  
-  .company-info p:first-child {
-    font-weight: bold;
-    font-size: 16px;
-  }
+.site-footer {
+  background: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Arial', sans-serif;
+  border-top: 1px solid #eee;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 200px;
+  padding: 40px 20px;
+}
+
+.site-footer .company-info p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+
 
   .product-card {
     transition: transform 0.3s ease; /* 加上動畫效果 */
@@ -136,11 +142,6 @@ body {
   .product-card:hover {
     transform: scale(1.05); /* 滑鼠滑上去放大1.05倍 */
   }
-  
-  footer .copyright {
-    font-size: 12px;
-    color: #aaa;
-    margin-top: 20px;
-  }
+
   
   

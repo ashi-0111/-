@@ -40,7 +40,7 @@ button {
 }
   
 .navbar a {
-    font-size: 15px;
+    font-size: 20px;
     color: #444;
     transition: 0.3s;
 }
@@ -91,7 +91,7 @@ main {
 }
 
 .content {
-    max-width: 800px;
+    max-width: 1050px;
     margin: 0 auto;
     padding: 70px 70px 20px;
     text-align: center;
@@ -99,7 +99,7 @@ main {
 
 .content p {
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.8;
     text-align: center;
     text-align: justify;       /* 左右對齊 */
@@ -107,7 +107,7 @@ main {
 }
 
 .content p:first-child {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 500;
     text-align: center;
     margin-bottom: 25px;
@@ -125,12 +125,26 @@ main {
     flex: 1;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #999;
-    font-size: 12px;
-    margin-top: 20px;
+  /* === Footer 區塊 === */
+.site-footer {
+  background: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Arial', sans-serif;
+  border-top: 1px solid #eee;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 200px;
+  padding: 40px 20px;
 }
 
+.site-footer .company-info p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
 
