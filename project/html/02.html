@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>合一豐盛</title>
+
+  <link rel="stylesheet" href="../css/02.css">
+  <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+  
+  <header class="site-header">
+    <a href="2025.html" class="logo">
+      <img src="../image/LOGO2.png" alt="合豐盛企業有限公司" class="logo">
+    </a>
+    <nav class="navbar">
+      <a href="01.html">最新消息</a>
+      <a href="02.html">關於我們</a>
+
+      <div class="dropdown">
+        <a>產品資訊</a>
+        <div class="dropdown-menu">
+          <a href="03.html">雙賀</a>
+          <a href="03-1.html">全佑</a>
+          <a href="03-2.html">金賀</a>
+        </div>
+      </div>
+
+      <a href="04.html">檢測報告</a>
+    </nav>
+  </header>
+
+  <section>            
+        <h1>合一豐盛</h1>
+        <!-- <p><br></p> -->
+  </section>
+
+
+
+    <main>
+            <section class="content">
+                <h2>「從實驗室走向田間，科學落地才有價值。」── 合豐盛</h2>
+                <p><br></p>
+                <p>合豐盛由一群深耕天然材料的生物科技研究者組成，自2022年創立以來，致力於開發天然無抗的產品，讓養殖現場真正感受到改變。</p>
+                <p>我們始終相信：沒有華麗的技術名詞，只有養殖現場看得見的成果，我們的使命讓動物更健康、讓養殖更安心。我們開發的菇醣聚合物技術，已成功應用於畜、禽動物的健康管理中，提供安全、高效、飼養的解決方案， 田間實證，才是真正價值所在。
+                <p>而陽離子菇醣聚合物（Cationic Mushroom Polysaccharide Complex, CMPC）的田間實力透過與畜牧業者的實地驗證，展現出強大的免疫調節與抗病力提升效果，逐步成為養殖場日常防護的首選工具。 我們相信，唯有讓使用者實際看見收益提升，產品才具備真正的價值。 面向未來的養殖方案 在極端氣候成為新常態的當下，我們正積極開發耐熱畜種專用營養補充劑與飼料配方，讓科技不僅解決當下問題，也為未來風險預作準備。</p>
+            </section>
+        </div>
+    </main>
+
+  <footer class="site-footer">
+    <div class="company-info">
+      <p>合豐盛企業有限公司</p>
+      <p>地址 | 804高雄市鼓山區裕誠路1557號5樓</p>
+      <p>電話 | 0912108712</p><br>
+          <p class="copyright">
+      Copyright ©2025 合豐盛
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    dropdownBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      dropdownMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function (e) {
+      const dropdown = document.querySelector('.dropdown');
+      if (!dropdown.contains(e.target)) {
+        dropdownMenu.classList.remove('show');
+      }
+    });
+
+    dropdownMenu.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        console.log('點擊了：' + e.target.textContent);
+        dropdownMenu.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
