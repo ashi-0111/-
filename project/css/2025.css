@@ -1,0 +1,331 @@
+/* === 全域設定 === */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+  
+  
+/* === Header 區塊 === */
+.site-header {
+  background: rgba(255, 255, 255, 0.2); /* 20%透明度白色 */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* 固定在頂部 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* 增加模糊效果 */
+  transition: opacity 0.3s ease; /* 平滑過渡效果 */
+}
+
+/* ✅ 新增偽元素在 site-header 底部產生白色半透明遮罩 */
+.site-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2); /* 白底透明20% */
+  pointer-events: none;
+  z-index: -1; /* 放在 header 背後，不擋點擊 */
+}
+
+/* 滾動時漸淡效果的類別
+.site-header.fade-out {
+  opacity: 0;
+  }
+.navbar {
+  display: flex;
+  gap: 30px;
+} */
+
+.navbar a {
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #666;
+}
+
+/* 讓 header 的 nav 內容可水平居中對齊 */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+/* dropdown 容器要 inline-block 且相對定位 */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+/* dropdown 選單樣式 */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);  /* 精準讓選單置中對齊於按鈕 */
+  background-color: white;
+  padding: 8px 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+/* 滑鼠滑過 dropdown 時顯示選單 */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* dropdown 選項的樣式 */
+.dropdown-menu a {
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* hover 效果 */
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+  color: #d10078;
+}
+
+
+  /* === 關於我們區塊 === */
+.about {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  min-height: 400px;
+
+  margin-top: -50px; /* ✅ 上推與 header 疊加交界 */
+  z-index: 1; /* ✅ 確保它在 header 下方，但圖片可被看到 */
+}
+  
+    .about-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto; /* 改為自動高度 */
+        object-fit: contain; /* 改為 contain，保持完整圖片不裁切 */
+        display: block;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        will-change: opacity, transform;
+}
+
+  
+  .about-text {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    color: white;
+    max-width: 700px;
+    z-index: 10;
+    transform: translateY(-50%); /* 垂直居中對齊 */
+  }
+
+  .about-text p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.7;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 增加文字陰影提高可讀性 */
+    
+  }
+
+.about-text h3 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 增加文字陰影提高可讀性 */
+}
+
+  .quote-block {
+    text-align: right;
+  }
+  
+  .quote-block h2,
+  .quote-block h3 {
+    margin: 0;
+    line-height: 1.6;
+    color: white; /* 依需求可設定 */
+  }
+
+
+
+
+  
+  /* === 產品資訊區塊 === */
+  .product-info {
+    background-color: #e5e5e5;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .tabs button {
+    background-color: #ffffff;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  
+  .tabs .active {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .product-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .product-card {
+    background-color: #d9d9d9;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 22px;
+    transition: 0.3s;
+  }
+  
+  .product-card:hover {
+    background-color: #c0c0c0;
+  }
+  
+  .product-card {
+    transition: transform 0.3s ease; /* 加上動畫效果 */
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05); /* 滑鼠滑上去放大1.05倍 */
+  }
+
+  
+  /* === Footer 區塊 === */
+.site-footer {
+  background: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Arial', sans-serif;
+  border-top: 1px solid #eee;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 200px;
+  padding: 40px 20px;
+}
+
+.site-footer .company-info p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+/* === Modal 放大圖片樣式 === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); /* 黑底透明背景 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2000; /* 確保蓋過 header 等內容 */
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: zoomIn 0.3s ease;
+}
+
+/* 動畫（可選） */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+  
+  
