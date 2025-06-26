@@ -1,0 +1,281 @@
+body {
+  margin: 0;
+  font-family: 'Noto Sans TC', 'PingFang TC', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* === Header 區塊 === */
+.site-header {
+    background: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .navbar {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .navbar a {
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #666;
+  }
+  
+  /* 讓 header 的 nav 內容可水平居中對齊 */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+  }
+  
+  /* dropdown 容器要 inline-block 且相對定位 */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  /* dropdown 選單樣式 */
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);  /* 精準讓選單置中對齊於按鈕 */
+    background-color: white;
+    padding: 8px 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  /* 滑鼠滑過 dropdown 時顯示選單 */
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* dropdown 選項的樣式 */
+  .dropdown-menu a {
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  /* hover 效果 */
+  .dropdown-menu a:hover {
+    background-color: #f0f0f0;
+    color: rgb(43, 43, 102);
+  }
+
+
+/* Main Content Styles */
+main {
+    padding: 30px 0;
+    background-color: #f4f4f4; /* Main content area background */
+}
+
+.certificate-grid img {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px; /* 可選：讓圖片角落更圓滑好看 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-grid img:hover {
+  transform: scale(1.03); /* 可選：滑過微微放大 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* 滑過加強陰影 */
+}
+
+
+.report-section {
+    margin-bottom: 40px;
+}
+
+.report-section h2 {
+    text-align: center;
+    font-size: 24px; /* Adjust based on original */
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.report-section h2 .checkmark {
+    color: rgb(43, 43, 102); /* Pink color */
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+/* Certificate Grid Styles */
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 強制一行四張圖片 */
+    gap: 50px;
+    max-width: 1200px; /* 確保每行最多放四張 */
+    margin: 0 auto; /* 置中 */
+    justify-items: center;
+    align-items: center;
+}
+
+.certificate-grid img {
+    width: 100%; /* 自動填滿單元格 */
+    max-width: 280px; /* 控制圖片最大寬度，避免過大 */
+    height: auto;
+}
+
+
+/* Specific adjustment if one grid needs more items, or to force 4 columns on larger screens */
+@media (min-width: 992px) { /* Adjust breakpoint if needed */
+    .certificate-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+  /* === Footer 區塊 === */
+.site-footer {
+  background: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Arial', sans-serif;
+  border-top: 1px solid #eee;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 200px;
+  padding: 40px 20px;
+}
+
+.site-footer .company-info p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    header .logo {
+        margin-bottom: 15px;
+    }
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .report-section h2 {
+        font-size: 20px;
+    }
+
+
+
+.certificate-grid img {
+    width: 100%; /* 自動填滿單元格 */
+    max-width: 280px; /* 控制圖片最大寬度，避免過大 */
+    height: auto;
+}
+
+     @media (min-width: 992px) { /* Reset for smaller screens */
+        .certificate-grid {
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+    }
+    /* Force 2 columns on medium-small screens if desired, or let auto-fit handle it */
+    /*
+    .certificate-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    */
+}
+
+@media (max-width: 480px) {
+    .certificate-grid {
+        /* On very small screens, maybe 1 or 2 columns */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    /*
+    .certificate-grid {
+        grid-template-columns: 1fr; // Single column
+    }
+    */
+}
+
+
+/* 放大效果 (點擊後的樣式) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000; /* 增加 z-index，確保在 header 之上 */
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+  .duck {
+  transition: transform 0.3s ease;
+}
+
+.duck:hover {
+  transform: scale(1.1);
+}
