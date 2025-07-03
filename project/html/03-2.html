@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>合一豐盛</title>
+
+  <link rel="stylesheet" href="../css/03.css">
+  <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+  
+  <header class="site-header">
+    <a href="2025.html" class="logo">
+      <img src="../image/LOGO.png" alt="合豐盛企業有限公司" class="logo">
+    </a>
+    <nav class="navbar">
+      <a href="01.html">最新消息</a>
+      <a href="02.html">關於我們</a>
+
+      <div class="dropdown">
+        <a>產品資訊</a>
+        <div class="dropdown-menu">
+          <a href="03.html">双賀</a>
+          <a href="03-1.html">全佑</a>
+          <a href="03-2.html">金賀</a>
+        </div>
+      </div>
+
+      <a href="04.html">檢測報告</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="product-section">
+      <P><br></P>
+      <h2>金賀機能型飼料添加物</h2>
+      <P><br></P>
+
+      <div class="product-images">
+        <div class="product-placeholder">
+          <img src="../image/0.jpg" alt="商品照1" onclick="openModal(this)">
+        </div>
+        <div class="product-placeholder">
+          <img src="../image/45.jpg" alt="商品照2" onclick="openModal(this)">
+        </div>
+        <div class="product-placeholder">
+          <img src="../image/100.jpg" alt="商品照3" onclick="openModal(this)">
+        </div>
+        <div class="product-placeholder">
+          <img src="../image/0-0.jpg" alt="商品照3" onclick="openModal(this)">
+        </div>
+        <div class="product-placeholder">
+          <img src="../image/0-45.jpg" alt="商品照3" onclick="openModal(this)">
+        </div>
+      </div>
+    </section>
+
+    <section class="product-info">
+      <section class="pig-test">
+        <img src="../image/duck.png" alt="鴨" class="duck">
+      </section>
+    
+      <h2>| 禽類、水產 |<br>機能型飼料添加物<br><br></h2>
+      <p><b>產品內容：</b>菇多醣（Mushroom Polysaccharide）</p>
+      <p><b>主要成分：</b>枯草芽孢桿菌（Bacillus Subtilis≥10⁸ CFU/g）</p>
+      <p><b><br>原料：</b></p>
+      <p>• 菇多醣（6%）</p>
+      <p>• 枯草芽孢桿菌</p>
+      <p>• 澱粉（amylum）</p>
+
+      <p><b><br>特點：</b></p>
+      <p>• 增加腸胃道菌群平衡，促進飼料消化。</p>
+      <p>• 抑制病原菌繁殖，提升宿主免疫力。</p>
+      <p>• 降低緊迫，增強抵抗力。</p>
+      <p>• 可搭配抗生素使用。</p>
+
+      <p><b><br>用量用法：</b></p>
+      <p>長期使用 1:1000 倍添加，緊急處理可用 1:250~1:500 倍持續 5~7 日。</p>
+    </section>
+
+    <section class="details-section">
+      <div class="use">
+        <h3>長期投放</h3>
+        <p>1:1000</p>
+      </div>
+      <div class="use">
+        <h3>緊急處置（連續處置5 ~ 7日）</h3>
+        <p>1:250 ~ 1:500</p>
+      </div>
+    </section>
+
+    <section class="storage-info">
+      <p><b>儲藏方式：</b>避光、乾燥、通風、常溫儲存。避免露天堆放。</p>
+      <p><b>注意事項：</b>1.使用本產品需預混。<br>2.緊急處置需解症後添加餵食。</p>
+      <p><b>包裝容量：</b>25KG/袋，1KG/包，25包/箱</p>
+      <p><b>有效期限：</b>2年</p>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="company-info">
+      <p>合豐盛企業有限公司</p>
+      <p>地址 | 804高雄市鼓山區裕誠路1557號5樓</p>
+      <p>電話 | 0912108712</p><br>
+      <p class="copyright">Copyright ©2025 合豐盛</p>
+    </div>
+  </footer>
+
+  <!-- 🔍 Modal 放大圖片視窗 -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <img id="modalImage" src="" alt="放大圖片">
+  </div>
+
+  <script>
+    function openModal(imgElement) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      modalImg.src = imgElement.src;
+      modal.classList.add('show');
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>
