@@ -1,0 +1,339 @@
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.7;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* === Header 區塊 === */
+.site-header {
+  background: #ffffff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.navbar a {
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #666;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 8px 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu a {
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+  color: rgb(43, 43, 102);
+}
+
+.product-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-images {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-placeholder {
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 0;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.product-placeholder:hover {
+    transform: scale(1.05);
+}
+
+.product-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product-placeholder img:hover {
+    transform: scale(1.1);
+}
+
+.product-info {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.product-info h2 {
+    font-size: 20px;
+    color: rgb(43, 43, 102);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.product-info p {
+    margin-bottom: 0.8em;
+    text-align: center;
+}
+
+.details-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.details-section div {
+    background-color: #fff;
+    padding: 20px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 250px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.details-section div h3 {
+    color: rgb(43, 43, 102);
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.details-section div p {
+    font-weight: bold;
+    text-align: center;
+}
+
+.site-footer {
+  background: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Arial', sans-serif;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: 40px 20px;
+}
+
+.site-footer .company-info p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+.storage-info {
+    background-color: #f0f0f0;
+    padding: 40px 40px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.storage-info p {
+    margin-bottom: 0.8em;
+    text-align: center;
+}
+
+.product-info ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    text-align: center;
+}
+
+.product-info ul li::before {
+    content: '•';
+    color: rgb(43, 43, 102);
+    margin-right: 10px;
+}
+
+.product-info ul li {
+    text-align: center;
+}
+
+.use {
+    transition: transform 0.3s ease;
+}
+
+.use:hover {
+    transform: scale(1.05);
+}
+
+.pig {
+  transition: transform 0.3s ease;
+}
+
+.pig:hover {
+  transform: scale(1.1);
+}
+
+.duck {
+  transition: transform 0.3s ease;
+}
+
+.duck:hover {
+  transform: scale(1.1);
+}
+
+/* 放大效果 (點擊後的樣式) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    transition: transform 0.3s ease;
+}
+
+.modal img:hover {
+    transform: scale(1.05);
+}
+
+.modal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* === 響應式：盡量維持電腦排版比例不變 === */
+@media (max-width: 1024px) {
+  .product-grid {
+    gap: 20px;
+  }
+  .product-card {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .product-card {
+    width: 45vw;
+    height: 45vw;
+    font-size: 14px;
+  }
+  .product-card::after {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text h2 {
+    font-size: 6vw;
+  }
+  .about-text h3 {
+    font-size: 4.5vw;
+  }
+  .product-card {
+    width: 90vw;
+    height: 90vw;
+  }
+}
