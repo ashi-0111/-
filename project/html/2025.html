@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>合一豐盛</title>
+
+  <link rel="stylesheet" href="../css/2025.css">
+  <link rel="stylesheet" href="../css/common.css">
+
+  <style>
+
+    .about-img {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      will-change: opacity, transform;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a href="2025.html" class="logo">
+      <img src="../image/LOGO.png" alt="合豐盛企業有限公司" class="logo">
+    </a>
+    <nav class="navbar">
+      <!-- <a href="01.html">最新消息</a> -->
+      <a href="02.html">關於我們</a>
+      <div class="dropdown">
+        <a id="dropdownBtn">產品資訊</a>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="03.html">双賀</a>
+          <a href="03-1.html">全佑</a>
+          <a href="03-2.html">金賀</a>
+        </div>
+      </div>
+      <a href="04.html">檢測報告</a>
+    </nav>
+  </header>
+
+  <section class="about">
+    <img src="../image/0607-1.jpg" alt="關於合豐盛" class="about-img">
+    <div class="about-text">
+      <div class="quote-block">
+        <h2>「研發與田間合一，落實才有價值。」</h2>
+        <h3>——合豐盛・合一豐盛</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-info">
+    <div class="tabs">
+      <!-- <button class="active">產品資訊</button> -->
+    <div class="product-grid">
+      <a href="03.html" class="product-card" style="background-image: url('../image/image-1.jpg');">
+      </a>
+      <a href="03-1.html" class="product-card" style="background-image: url('../image/image-2.jpg');">
+      </a>
+      <a href="03-2.html" class="product-card" style="background-image: url('../image/image-3.jpg');">
+      </a>
+      <a href="03-2.html" class="product-card" style="background-image: url('../image/image-4.jpg');"> 
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="company-info">
+      <p>合豐盛企業有限公司</p>
+      <p>地址 | 804高雄市鼓山區裕誠路1557號5樓</p>
+      <p>電話 | 0912108712</p><br>
+      <p class="copyright">Copyright ©2025 合豐盛</p>
+    </div>
+  </footer>
+
+  <script>
+    // 導覽列下拉功能
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    dropdownBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      dropdownMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function (e) {
+      const dropdown = document.querySelector('.dropdown');
+      if (!dropdown.contains(e.target)) {
+        dropdownMenu.classList.remove('show');
+      }
+    });
+
+    dropdownMenu.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        console.log('點擊了：' + e.target.textContent);
+        dropdownMenu.classList.remove('show');
+      }
+    });
+
+    // 導覽列滾動淡出
+    const header = document.querySelector('.site-header');
+    let lastScrollY = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        header.classList.add('fade-out');
+      } else {
+        header.classList.remove('fade-out');
+      }
+
+      lastScrollY = currentScrollY;
+    });
+
+    // 首圖淡出與上移效果
+    const aboutImg = document.querySelector('.about-img');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const fadePoint = 300;
+
+      const opacity = Math.max(1 - scrollY / fadePoint, 0);
+      const translateY = Math.min(scrollY * 0.3, 100);
+
+      aboutImg.style.opacity = opacity;
+      aboutImg.style.transform = `translateY(-${translateY}px)`;
+    });
+    
+      function openModal(imgElement) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    modalImg.src = imgElement.src;
+    modal.classList.add('show');
+  }
+
+  // 點擊 modal 任意區域即關閉
+  document.getElementById('imageModal').addEventListener('click', function () {
+    this.classList.remove('show');
+  });
+  </script>
+
+</body>
+
+<!-- 放在 <body> 最底下，footer 上面或下面都可以 -->
+<div class="modal" id="imageModal">
+  <img id="modalImage" src="" alt="放大圖">
+</div>
+
+</html>
